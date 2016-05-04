@@ -1,0 +1,90 @@
+.webwrapper > *:hover {
+    cursor: pointer;
+    outline-style: solid;
+    outline-color: #0088cc;
+    outline-width: 2px;
+    outline-offset: 5px;
+}
+
+.sidebar {
+    background: #FFF;
+    box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+}
+
+.webwrapper {
+    background: #ebf2f9;
+    padding: 40px 70px 40px 70px;
+}
+
+a.btn {
+    background: #2ecc71;
+    color: #FFF;
+    font-weight: bolder;
+}
+
+.header {
+    padding-top: 20px;
+}
+
+.tools {
+    padding-top: 20px;
+}
+
+.tools a {
+    border-bottom: 1px solid #d7d7d7;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 60px;
+}
+
+.tools a.active {
+    color: #333;
+}
+
+.tip {
+    padding-top: 30px;
+}
+
+#select {
+    /*background: url(select-parts.png) no-repeat;*/
+}
+
+#click {
+    /*background: url(normal-click.svg) no-repeat;*/
+}
+
+.pages {
+    padding-top: 30px;
+}
+
+.pages ul {
+    list-style: none;
+    padding-left: 0;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.pages ul li {
+    border-top: 1px solid #d7d7d7;
+}
+
+.pages ul li a {
+    background: #f6faff url(arrow.svg) right center no-repeat;
+    background-size: 30% 30%;
+    display: block;
+    padding-left: 20px;
+    padding-top: 13px;
+    padding-bottom: 14px;
+}
+
+.pages ul li.active a {
+    background: #ebf2f9 url(arrow.svg) right center no-repeat;
+    background-size: 30% 30%;
+    color: #333;
+}

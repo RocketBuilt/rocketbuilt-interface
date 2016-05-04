@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RocketBuilt App</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles.css" media="screen" charset="utf-8">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <div class="row header">
+                    <div class="col-md-8">
+                        <img src="rocket.svg" width="36" alt="RocketBuilt">
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" class="btn">Finish</a>
+                    </div>
+                </div>
+                <div class="row tools">
+                    <div class="col-md-12">
+                        <a href="#" id="select" class="active">Select editable parts</a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="#" id="click">Simulate normal click</a>
+                    </div>
+                </div>
+                <div class="row tip">
+                    <div class="col-md-12">
+                        <ol>
+                            <li>We’ve recognized 5 HTML files. Start by selecting parts you would like to have editable on each page then hit finish.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row pages">
+                </div>
+            </div>
+            <div class="col-md-9 col-md-offset-3 webwrapper">
+                <iframe src="/{{ link }}" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
