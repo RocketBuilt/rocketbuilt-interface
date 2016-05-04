@@ -1,0 +1,20 @@
+.interface-grid {
+  @include row(table);
+  height: 100%;
+
+  @include component('side') {
+    @include span-columns(3);
+    vertical-align: top;
+    height: 100%;
+    background: $white;
+  }
+
+  @include component('main') {
+    @include span-columns(9);
+    vertical-align: top;
+    height: 100%;
+    padding: 1em;
+    background: $brand-light-blue;
+    box-shadow: inset 0 0 15px rgba(shade($brand-light-blue, 10%), 0.8);
+  }
+}

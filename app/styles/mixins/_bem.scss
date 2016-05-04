@@ -1,0 +1,11 @@
+@mixin component($name) {
+  &--#{$name} {
+    @content;
+  }
+}
+
+@mixin modifier($name) {
+  &__#{$name} {
+    @content;
+  }
+}

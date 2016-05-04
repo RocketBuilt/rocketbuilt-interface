@@ -1,0 +1,21 @@
+@mixin grid-core($size) {
+  @for $i from 1 through $grid-columns {
+    .col-#{$size}-#{$i} {
+      // Ignore float for the largest grid size
+      @if $i < $grid-columns {
+        float: left;
+      }
+      @include span-columns($i);
+    }
+    
+    // If it's not the screen-xs, then let's add push and pull helper classes
+    @if $size != "xs" {
+      .col-#{$size}-push-#{$i} {
+        left: flex-grid($i, $grid-columns) + flex-gutter($grid-columns);
+      }
+      .col-#{$size}-pull-#{$i} {
+        right: flex-grid($i, $grid-columns) + flex-gutter($grid-columns);
+      }
+    }
+  }
+}

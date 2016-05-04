@@ -1,0 +1,111 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RocketBuilt Interface</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <script src="https://use.typekit.net/cjc2jpp.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <div class="row">
+      <div class="interface-grid">
+        <div class="interface-grid--side">
+          <aside class="sidebar">
+            <div class="sidebar--row">
+              <a href="#"><img src="images/rocket.svg" class="sidebar--logo"></a>
+
+              <div class="sidebar--finish">
+                <a href="#" class="btn">Finish</a>
+              </div>
+            </div>
+
+            <ul class="sidebar--list sidebar--actions">
+              <li class="sidebar--actions--item">
+                <a href="#" class="sidebar--actions--link sidebar--row">Select editable parts</a>
+              </li>
+
+              <li class="sidebar--actions--item">
+                <a href="#" class="sidebar--actions--link sidebar--actions--link__active sidebar--row">Normal click</a>
+              </li>
+            </ul>
+
+            <div class="sidebar--row">
+              <div class="step"><span class="step--content">1</span></div>
+
+              <p class="para">
+                We've recognized <span id="numOfRecognizedFiles">X</span> HTML files. Start by
+                selecting parts you would like to have editable on each page, then hit finish.
+              </p>
+            </div>
+
+            <ul class="sidebar--list sidebar--files">
+              <li class="sidebar--files--item">
+                <a href="#" class="sidebar--row sidebar--files--link sidebar--files--link__active">index.html</a>
+              </li>
+
+              <li class="sidebar--files--item">
+                <a href="#" class="sidebar--row sidebar--files--link">about.html</a>
+              </li>
+
+              <li class="sidebar--files--item">
+                <a href="#" class="sidebar--row sidebar--files--link">gallery.html</a>
+              </li>
+
+              <li class="sidebar--files--item">
+                <a href="#" class="sidebar--row sidebar--files--link">contact.html</a>
+              </li>
+            </ul>
+          </aside>
+        </div>
+
+        <div class="interface-grid--main">
+          <section class="embed">
+            <iframe>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
