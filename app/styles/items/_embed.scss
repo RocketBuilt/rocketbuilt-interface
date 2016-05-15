@@ -1,4 +1,34 @@
 .embed {
-  width: 100%;
+  border-left: 1px solid tint($standard-grey, 90%);
   height: 100%;
+  position: relative;
+  width: 100%;
+
+  @include component(overlay) {
+    background: $brand-orange;
+    bottom: 0;
+    left: 0;
+    opacity: 0.75;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    @include component(state) {
+      bottom: 0;
+      height: 1em;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 0;
+    }
+  }
+
+  @include component(iframe) {
+    border: 0;
+    height: 100%;
+    width: 100%;
+  }
 }

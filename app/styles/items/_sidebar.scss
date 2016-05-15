@@ -4,8 +4,8 @@
 
   @include component('row') {
     display: block;
-    width: 100%;
     padding: 0.75em 1.25em;
+    width: 100%;
   }
 
   @include component('logo') {
@@ -14,8 +14,8 @@
 
   @include component('finish') {
     float: right;
-    width: 100px;
     margin-top: 0.25em;
+    width: 100px;
   }
 
   @include component('list') {
@@ -24,15 +24,50 @@
   }
 
   @include component('actions') {
+    border-bottom: 1px solid tint($standard-grey, 90%);
     border-top: 1px solid tint($standard-grey, 90%);
-    
+    padding: 0 1.25em;
+    width: auto;
+
     @include component('link') {
-      font-weight: $weight-medium;
       color: $inactive-grey;
-      border-bottom: 1px solid tint($standard-grey, 90%);
+      font-weight: $weight-medium;
+      margin: .75em 0;
+      padding-bottom: 0;
+      padding-top: 0;
+      position: relative;
+
+      &:hover {
+        border-color: $standard-grey;
+        color: $standard-grey;
+        z-index: 1;
+      }
 
       @include modifier('active') {
-        color: $standard-grey;
+        color: $brand-blue;
+
+        &:hover {
+          color: $brand-blue;
+        }
+      }
+
+      @include component('icon') {
+        border: 1px solid tint($standard-grey, 90%);
+        border-radius: 1em;
+        display: inline-block;
+        font-family: 'FontAwesome';
+        height: 1.5em;
+        margin-left: -1em;
+        margin-right: .5em;
+        text-align: center;
+        vertical-align: middle;
+        width: 1.5em;
+      }
+
+      &__active .circle-icon {
+        background-color: $brand-blue;
+        border-color: $brand-blue;
+        color: white;
       }
     }
   }
