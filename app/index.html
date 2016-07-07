@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <script src="https://use.typekit.net/cjc2jpp.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>if (!window.location.hostname.match(/localhost/)) {try{Typekit.load({ async: true });}catch(e){}}</script>
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
@@ -19,7 +19,7 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
@@ -28,7 +28,7 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    
+
     <div class="row">
       <div class="interface-grid">
         <div class="interface-grid--side">
@@ -41,15 +41,48 @@
               </div>
             </div>
 
-            <ul class="sidebar--list sidebar--actions">
-              <li class="sidebar--actions--item">
-                <a href="#" class="sidebar--actions--link sidebar--row">Select editable parts</a>
-              </li>
+            <sidebar-actions></sidebar-actions>
 
-              <li class="sidebar--actions--item">
-                <a href="#" class="sidebar--actions--link sidebar--actions--link__active sidebar--row">Normal click</a>
-              </li>
-            </ul>
+<script type="riot/tag">
+<sidebar-actions>
+  <ul class="sidebar--list sidebar--actions">
+    <li class="sidebar--actions--item">
+      <a href="#" class="sidebar--actions--link {mode ? 'sidebar--actions--link__active' : ''} sidebar--row" onclick={enableSelectMode}>
+          <span class="circle-icon"><span class="circle-icon--inner">&#xf245;</span></span> Select editable parts
+      </a>
+    </li>
+
+    <li class="sidebar--actions--item">
+      <a href="#" class="sidebar--actions--link {mode ? '': 'sidebar--actions--link__active'} sidebar--row"  onclick={disableSelectMode}>
+          <span class="circle-icon"><span class="circle-icon--inner">&#xf25a;</span></span> Normal click
+      </a>
+    </li>
+  </ul>
+
+  this.mode = true;
+
+  function setMode(mode) {
+    theRocket.contentWindow.postMessage({
+      action: 'theRocket:mode',
+      value: mode
+    }, '*');
+  };
+
+  disableSelectMode = function(e) {
+    this.mode = false;
+    setMode(this.mode);
+  }
+
+  enableSelectMode = function(e) {
+    this.mode = true;
+    setMode(this.mode);
+  }
+
+  this.on('mount', function() {
+    enableSelectMode();
+  })
+</sidebar-actions>
+</script>
 
             <div class="sidebar--row">
               <div class="step"><span class="step--content">1</span></div>
@@ -82,7 +115,10 @@
 
         <div class="interface-grid--main">
           <section class="embed">
-            <iframe>
+            <iframe id="the-rocket" class="embed--iframe" src="http://localhost:9001/"></iframe>
+            <div class="embed--overlay">
+              <div class="embed--overlay--state">Loading&hellip;</div>
+            </div>
           </section>
         </div>
       </div>
@@ -103,9 +139,20 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+
+    <!-- build:js scripts/riot+compiler.min.js -->
+    <script src="scripts/riot+compiler.min.js"></script>
+    <!-- endbuild -->
+    <script>
+    window.addEventListener('load', function() {
+        if (riot) {
+            riot.mount('*');
+        }
+    });
+    </script>
   </body>
 </html>

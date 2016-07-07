@@ -1,0 +1,24 @@
+.circle-icon {
+  border: 1px solid tint($standard-grey, 90%);
+  border-radius: 1em;
+  display: inline-block;
+  font-family: 'FontAwesome';
+  height: 1.5em;
+  line-height: 1.5em;
+  margin-left: -1em;
+  margin-right: .5em;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 1.5em;
+
+  @include component('inner') {
+    bottom: 0;
+    font-size: .75em;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
